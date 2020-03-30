@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="test1" width="318px" height="396px" viewBox="0 0 318 396" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>未命名 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="三角形" fill="#9A00CA" transform="translate(98.500000, 106.500000) rotate(-43.000000) translate(-98.500000, -106.500000) " points="98.5 -38 247 251 -50 251"></polygon>
+        <circle id="椭圆形" fill="#F60606" cx="197.5" cy="232.5" r="120.5"></circle>
+        <rect id="矩形" fill="#2EA8FC" x="11" y="159" width="237" height="237"></rect>
+    </g>
+</svg>
