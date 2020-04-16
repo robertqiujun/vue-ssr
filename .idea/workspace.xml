@@ -1,17 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff5b0dc0-29e2-40a7-a3ba-ec129a94b09e" name="Default Changelist" comment="" />
+    <list default="true" id="ff5b0dc0-29e2-40a7-a3ba-ec129a94b09e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/webpack.config.practice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/config/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/config/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/views/login/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/views/test/test.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/define.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/extend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/feature.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/render.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/component/v-model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/computed/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/data-binding/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/directive/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/instance/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/lifecycle/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.config.base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.config.client.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/app.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/styles/footer.styl" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/styles/footer.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/styles/global.styl" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/styles/global.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/todo/todo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/todo/todo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/app.6e0ea5aa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/runtime.9a994431.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/styles.71d97020.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vendor.f7d11025.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZhSMVlDNAHKZf8ur9WnxCw8rmN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -36,10 +99,43 @@
       <option name="presentableId" value="Default" />
       <updated>1585289784484</updated>
       <workItem from="1585289785809" duration="222000" />
+      <workItem from="1585535261099" duration="1109000" />
+      <workItem from="1585734229568" duration="12000" />
+      <workItem from="1585734611804" duration="6895000" />
+      <workItem from="1586329264956" duration="1559000" />
+      <workItem from="1586336917916" duration="8727000" />
+      <workItem from="1586513847094" duration="13457000" />
+      <workItem from="1586758980411" duration="44000" />
+      <workItem from="1586759039268" duration="31148000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/index.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

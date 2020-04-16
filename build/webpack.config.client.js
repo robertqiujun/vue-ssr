@@ -16,6 +16,11 @@ const devServer =  {
   },
   open: true, // 自动打开浏览器
   hot: true, // 无刷新热更新
+  historyApiFallback: {
+    // history模式下，为防止刷新后404，需要配置默认路径,与base.config中的publicPath相关
+    index: baseConfig.output.publicPath + 'index.html'
+  },
+  // publicPath: '/'
 };
 
 const defaultPlugins = [ // 主要用于前端渲染，服务端渲染使用另外一套配置
@@ -24,7 +29,9 @@ const defaultPlugins = [ // 主要用于前端渲染，服务端渲染使用另�
       NODE_ENV: isDev ? '"development"': '"production"', // 让js代码中可以使用process.env
     }
   }),
-  new HTMLPlugin()
+  new HTMLPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ];
 
 if (isDev) {
@@ -57,14 +64,14 @@ if (isDev) {
     devServer,
     plugins: defaultPlugins.concat([
       new webpack.HotModuleReplacementPlugin(), // 启动热加载的插件
-      new webpack.NoEmitOnErrorsPlugin(),// 减少不需要的信息展示
+      // 废弃 new webpack.NoEmitOnErrorsPlugin(),// 减少不需要的信息展示
     ])
   });
 }else {
   config = merge(baseConfig, {
     entry: { // 把通用类库文件单独打包
       app: path.join(__dirname, '../client/index.js'),
-      vendor: ['vue']
+      // vendor: ['vue']
     },
     output: {
       // hash是整个应用使用同一个hash，打包出的文件的hash是相同的，chunkhash会对打包的不同的模块单独设置hash,
@@ -90,14 +97,22 @@ if (isDev) {
         },
       ]
     },
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      },
+      runtimeChunk: true,
+    },
     plugins: defaultPlugins.concat([
-      new ExtractPlugin('styles.[contentHash:8].css'),
+      new ExtractPlugin('styles.[contentHash:8].css')
+      /* webpack4中已废弃, 改成了optimization中的splitChunks配置
       new webpack.optimize.CommonsChunkPlugin({ // 把通用类库文件单独打包，name指向entry中配置的vendor
         name: 'vendor' // vendor放在runtime之前
       }),
       new webpack.optimize.CommonsChunkPlugin({ // 把webpack生成的代码单独打包
         name: 'runtime'
-      })
+      })*/
+
     ])
   });
 }

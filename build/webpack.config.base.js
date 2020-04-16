@@ -5,11 +5,13 @@ const createVueLoaderOptions = require('./vue-loader.config');
 const isDev = process.env.NODE_ENV === 'development';
 
 const config = {
+  mode: process.env.NODE_ENV || 'production', // development || production
   target: 'web',
   entry: path.join(__dirname, '../client/index.js'),
   output: {
     filename: 'bundle.[hash:8].js',
-    path: path.join(__dirname, '../dist/')
+    path: path.join(__dirname, '../dist/'),
+    publicPath: '/public/' // 开发模式下bundle.js的资源路径，重要！
   },
   module: {
     rules: [
