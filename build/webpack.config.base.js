@@ -11,7 +11,8 @@ const config = {
   output: {
     filename: 'bundle.[hash:8].js',
     path: path.join(__dirname, '../dist/'),
-    publicPath: '/public/' // 开发模式下bundle.js的资源路径，重要！
+    publicPath: '/public/', // 开发模式下bundle.js的资源路径，重要！
+    chunkFilename: "[name].[hash:8].js", // 动态import文件名，用于路由中的魔法注释
   },
   module: {
     rules: [

@@ -3,6 +3,8 @@
     <div id="cover"></div>
     <Header></Header>
     <!--<todo></todo>-->
+    <p>{{storeCount}} {{fullName}} {{storeCount2}}</p>
+    <p>textA: {{textA}}, textB: {{textB}}, textPlus: {{textPlus}}, textC: {{textC}}</p>
     <div class="routes">
       <router-link to="/app/123" class="router-button">App</router-link>
       <router-link to="/login" class="router-button">Login</router-link>
@@ -11,6 +13,7 @@
       -->
       <router-link :to="{name: 'app', params: {id: '456'}}" class="router-button">使用NAME来跳转App</router-link>
       <router-link :to="{name: 'app.test'}" class="router-button">跳转app的子节点</router-link>
+      <router-link :to="{name: 'app', params: {id: '135'}}" class="router-button">触发routeUpdate</router-link>
     </div>
     <!--具有命名的路由，可以在配置中指定路由渲染到这个view下-->
     <!--    <router-view name="a" /> -->
@@ -25,16 +28,17 @@
 </template>
 
 <script>
+  import {mapState, mapGetters, mapActions, mapMutations} from 'vuex';
   import Header from './layout/header.vue'
   import Footer from './layout/footer.jsx'
-  import Todo from './views/todo/todo.vue'
+  // import Todo from './views/todo/todo.vue' // 因为routes中配置了异步加载，所以这里暂时去掉
 
   // console.log(Header.__docs)
 
   export default {
     name: 'app',
     components: {
-      Todo,
+      // Todo,
       Header,
       Footer
     },
@@ -47,7 +51,58 @@
 
     },
     mounted () {
+      console.log('%c STORE=', 'color: purple', this.$store);
       console.log(this.$route, this.$route.query); // 也可以获取到?后面的query参数
+      // this.$store.state.count = 3; // 在Store初始化时配置了strict禁止外部数据操作的时候，这种操作会报错
+      // let i = 0;
+      setInterval(() => {
+        // i++;
+        // this.$store.commit('updateCount', {num: i, num2: i * 2});
+        this.$store.commit('updateUserName');
+        // shi用mapMutations之后可以直接调用mutation中的方法
+        this.updateUserName();
+      }, 5000);
+
+      // 直接从外部使用action来修改数据
+      // this.$store.dispatch('updateCountAsync', {num: 100, num2: 1000, time: 2000});
+
+      // 使用mapActions可以直接调用action中的方法
+      console.log('store=', this.$store, this['b/textPlus']);
+      this.updateCountAsync({num: 100, num2: 1000, time: 2000});
+      this.updateText('修改了模块A的数据');
+      this['b/updateText']('修改了模块B的数据');
+      this['b/add']();
+      this.testAction();
+    },
+    computed: {
+      // ...mapState(['count']),
+      /* storeCount () { // store中的state变量
+        return this.count;
+      }, */
+      // 改变需要的state的引用名称
+      ...mapState({
+        storeCount: 'count',
+        storeCount2: (state) => state.count2, // 如果需要做些计算，可以使用这种方式
+        // 注意，c模块是在index.js中注册的
+        textC: state => state.c.text,
+      }),
+
+      // ...mapGetters(['fullName', 'b/textPlus']), // 带有命名空间的方法不好写入模板
+      ...mapGetters({
+        'fullName': 'fullName',
+        textPlus: 'b/textPlus'
+      }),
+
+      textA () {
+        return this.$store.state.a.text;
+      },
+      textB () {
+        return this.$store.state.b.text;
+      },
+
+      /* fullName () { // 使用mapGetters之后就不需要了
+        return this.$store.getters.fullName;
+      } */
     },
     watch: {
       '$route' (to, from) {
@@ -59,6 +114,11 @@
 
         this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left';
       }
+    },
+    methods: {
+      ...mapActions(['updateCountAsync', 'b/add', 'testAction']),
+      // 没有namespace的情况下，模块中的mutation方法(updateText)可以通过mapMutations直接获取
+      ...mapMutations(['updateCount', 'updateUserName', 'updateText', 'b/updateText']),
     }
   }
 </script>

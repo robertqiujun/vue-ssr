@@ -27,6 +27,26 @@
 
   let TotalId = 0
   export default {
+    beforeRouteEnter (to, from, next) {
+      console.log('%c TODO组件中写入的路由钩子beforeRouteEnter', 'color: orangered');
+      next((vm) => {
+        console.log('%c beforeRouteEnter中调用组件实例中的参数=', 'color: blue', vm.id);
+      });
+    },
+    beforeRouteUpdate (to, from, next) {
+      // 例如替换地址栏后面的参数时，update会被触发
+      console.log('%c TODO组件中写入的路由钩子beforeRouteUpdate', 'color: orangered');
+      // 此时没有this上下文
+      next();
+    },
+    beforeRouteLeave (to, from, next) {
+      console.log('%c TODO组件中写入的路由钩子beforeRouteLeave', 'color: orangered');
+      if (global.confirm('是否确认离开?')) {
+        next();
+      } else {
+
+      }
+    },
     name: 'todo.vue',
     components: {
       Item,
@@ -41,7 +61,8 @@
       }
     },
     mounted () {
-      console.log('从地址栏来得id参数是=', this.id);
+      // mounted在同路由带不同参数切换的情况下仅有第一次会触发，此时需要使用routeUpdate处理
+      console.log('todo mounted! 从地址栏来得id参数是=', this.id);
     },
     computed: {
       filteredTodos () {
